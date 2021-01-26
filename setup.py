@@ -16,7 +16,7 @@ setuptools.setup(
     classifiers=[
         "Intended Audience :: Developers",
         "Natural Language :: English",
-        "License :: OSI Approved :: MIT",
+        "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3 :: Only"
     ],
     keywords="pushover, api, client",
