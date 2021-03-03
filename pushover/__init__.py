@@ -161,13 +161,19 @@ class Glance:
         :property response_data:
             The requests Response of this particular message.
         """
+        self.title = ""
+        self.text = ""
+        self.subtext = ""
+        if isinstance(text, str):
+            self.text = text[0:100]
+        if isinstance(title, str):
+            self.title = title[0:100]
+        if isinstance(subtext, str):
+            self.subtext = subtext[0:100]
         if not isinstance(count, int):
             raise ValueError("'count' must be an integer!")
         if not isinstance(percent, int) and not 0 <= percent <= 100:
             raise ValueError("'percent' must be an integer between 0 and 100!")
-        self.title = title[0:100]
-        self.text = text[0:100]
-        self.subtext = subtext[0:100]
         self.count = count
         self.percent = percent
         self._api_callback = "glances.json"
